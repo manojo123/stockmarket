@@ -18,14 +18,14 @@ class ExampleTest extends TestCase
         $switch = Product::create(['name' => 'Nintendo Switch']);
         $bestBuy = Retailer::create(['name' => 'Best Buy']);
 
-        $this->assertFalse($switch->inStock());
-
         $stock = new Stock([
         	'price' => 1000,
         	'url' => 'http://foo.com',
         	'sku' => '12346',
         	'in_stock' => true
         ]);
+        
+        $this->assertFalse($switch->inStock());
 
         $bestBuy->addStock($switch, $stock);
 

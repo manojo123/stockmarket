@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+	public function track()
+	{
+		$this->stock->each->track();
+	}
+
 	public function inStock()
 	{
 		return $this->stock()->where('in_stock', true)->exists();
