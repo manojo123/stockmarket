@@ -8,9 +8,7 @@ use Illuminate\Support\Str;
 
 class Stock extends Model
 {
-	protected $casts = [
-		'in_stock' => 'boolean'
-	];
+	protected $casts = ['in_stock' => 'boolean'];
 
 	public function track()
 	{
